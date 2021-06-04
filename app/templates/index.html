@@ -15,7 +15,7 @@
     <h1>CRUD com Python</h1>
 </div>
 <div class="col-8 m-auto pt-2 pb-2 text-center">
-    <a href="" class="btn btn-success">Adicionar</a>
+    <a href="form/" class="btn btn-success">Adicionar</a>
 </div>
 <div class="col-8 m-auto pt-2 pb-2 text-center">
     <table class="table">
@@ -38,12 +38,15 @@
             <td>
                 <a href="view/{{dbs.id}}" class="btn btn-dark">Visualizar</a>
                 <a href="edit/{{dbs.id}}" class="btn btn-primary">Editar</a>
-                <a href="" class="btn btn-danger">Deletar</a>
+                <a href="delete/{{dbs.id}}" class="btn btn-danger btnDel">Deletar</a>
             </td>
         </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
+
+{% load static%}
+<script src="{%static 'javascript.js'%}"></script>
 </body>
 </html>

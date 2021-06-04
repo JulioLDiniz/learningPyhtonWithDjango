@@ -18,6 +18,10 @@
     <a href="/" class="btn btn-info">Voltar</a>
 </div>
 <div class="col-8 m-auto pt-2 pb-2 text-center">
+    <div id="result">
+
+    </div>
+
     <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{% else %}/create/{% endif %}" method="post">
         {% csrf_token %}
         <div class="form-group mt-4">Modelo{{form.modelo}}</div>
@@ -26,5 +30,8 @@
         {% if visualizacao %}{% else %}<input type="submit" class="btn btn-success" value="Salvar" style="margin-top:15px">{% endif %}
     </form>
 </div>
+
+{% load static%}
+<script src="{%static 'javascript.js'%}"></script>
 </body>
 </html>
