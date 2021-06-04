@@ -23,7 +23,7 @@
         <div class="form-group mt-4">Modelo{{form.modelo}}</div>
         <div class="form-group mt-4">Marca{{form.marca}}</div>
         <div class="form-group mt-4">Ano{{form.ano}}</div>
-        <input type="submit" class="btn btn-success" value="Salvar" style="margin-top:15px">
+        {% if visualizacao %}{% else %}<input type="submit" class="btn btn-success" value="Salvar" style="margin-top:15px">{% endif %}
     </form>
 </div>
 </body>

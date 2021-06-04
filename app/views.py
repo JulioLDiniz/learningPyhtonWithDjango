@@ -22,7 +22,12 @@ def create(request):
 def view(request, pk):
     data = {}
     data['db'] = Carros.objects.get(pk=pk)
-    return render(request, 'view.html', data)
+    data['form'] = CarrosForm(instance=data['db'])
+    data['form'].fields['modelo'].disabled = True
+    data['form'].fields['marca'].disabled = True
+    data['form'].fields['ano'].disabled = True
+    data['visualizacao'] = True
+    return render(request, 'form.html', data)
 
 def edit(request, pk):
     data = {}
